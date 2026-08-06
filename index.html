@@ -1,0 +1,6506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Youssef Nachar — System Operator, Full-Stack Developer & Freelancer">
+
+    <meta name="theme-color" content="#050608">
+
+    <title>Youssef Nachar — System Operator | Full-Stack Developer</title>
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+<style>
+    /* =========================================================
+   YOUSSEF NACHAR
+   LUXURY SYSTEM OPERATOR PORTFOLIO
+   2026
+========================================================= */
+
+
+:root {
+
+    --bg: #050608;
+    --bg-2: #080a0d;
+
+    --white: #f4f5f0;
+    --muted: #858a92;
+    --muted-2: #555a62;
+
+    --line: rgba(255,255,255,.09);
+    --line-strong: rgba(255,255,255,.16);
+
+    --surface: rgba(255,255,255,.035);
+    --surface-hover: rgba(255,255,255,.065);
+
+    --accent: #c8ff42;
+    --accent-soft: rgba(200,255,66,.1);
+
+    --blue: #6677ff;
+
+    --display: "Space Grotesk", sans-serif;
+    --body: "Inter", sans-serif;
+    --mono: "DM Mono", monospace;
+
+    --container: 1250px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--bg);
+
+    color: var(--white);
+
+    font-family: var(--body);
+
+    overflow-x: hidden;
+
+}
+
+
+body::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+body::-webkit-scrollbar-track {
+
+    background: var(--bg);
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+
+    background: #292d33;
+
+    border-radius: 20px;
+
+}
+
+
+body::-webkit-scrollbar-thumb:hover {
+
+    background: var(--accent);
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+::selection {
+
+    background: var(--accent);
+
+    color: #000;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -20;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.023) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.023) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            black 50%,
+            transparent 100%
+        );
+
+}
+
+
+.noise {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .035;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+}
+
+
+.orb {
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    opacity: .1;
+
+    animation: orbMove 15s ease-in-out infinite alternate;
+
+}
+
+
+.orb-1 {
+
+    top: -300px;
+    right: -200px;
+
+    background: var(--accent);
+
+}
+
+
+.orb-2 {
+
+    left: -350px;
+    top: 35%;
+
+    background: var(--blue);
+
+    animation-delay: -5s;
+
+}
+
+
+.orb-3 {
+
+    right: 15%;
+    bottom: -400px;
+
+    background: white;
+
+    opacity: .035;
+
+    animation-delay: -9s;
+
+}
+
+
+@keyframes orbMove {
+
+    0% {
+
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(100px,80px,0)
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor {
+
+    position: fixed;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+
+.cursor-follower {
+
+    position: fixed;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid
+        rgba(200,255,66,.5);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:
+        width .25s,
+        height .25s,
+        border .25s;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    width:
+        min(
+            calc(100% - 60px),
+            var(--container)
+        );
+
+    height: 90px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 500;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-mark {
+
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line-strong);
+
+    border-radius: 12px;
+
+    font-family: var(--display);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.02)
+        );
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.logo-text strong {
+
+    font-family: var(--display);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo-text span {
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: var(--muted-2);
+
+    letter-spacing: 1px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+}
+
+
+.nav-link {
+
+    display: flex;
+
+    gap: 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    transition: .3s;
+
+}
+
+
+.nav-link small {
+
+    font-family: var(--mono);
+
+    color: #454a51;
+
+    font-size: 8px;
+
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: var(--white);
+
+}
+
+
+.nav-link.active small {
+
+    color: var(--accent);
+
+}
+
+
+.nav-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 17px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    transition: .3s;
+
+}
+
+
+.nav-cta:hover {
+
+    color: #000;
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section {
+
+    width:
+        min(
+            calc(100% - 60px),
+            var(--container)
+        );
+
+    margin: auto;
+
+    position: relative;
+
+}
+
+
+.hero {
+
+    min-height:
+        calc(100vh - 90px);
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr .92fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.about,
+.services,
+.skills,
+.projects,
+.process,
+.contact {
+
+    padding-top: 180px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.status-badge {
+
+    width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 100px;
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #8e939a;
+
+    margin-bottom: 25px;
+
+}
+
+
+.status-dot {
+
+    width: 6px;
+    height: 6px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 14px var(--accent);
+
+    animation: statusPulse 1.7s infinite;
+
+}
+
+
+@keyframes statusPulse {
+
+    0%,100% {
+
+        opacity: 1;
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        opacity: .35;
+        transform: scale(.6);
+
+    }
+
+}
+
+
+.hero-code {
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    color: var(--accent);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero-code span {
+
+    color: #454950;
+
+    margin: 0 7px;
+
+}
+
+
+.hero h1 {
+
+    font-family: var(--display);
+
+    font-weight: 600;
+
+    font-size:
+        clamp(
+            72px,
+            10vw,
+            145px
+        );
+
+    line-height: .8;
+
+    letter-spacing: -8px;
+
+    margin-left: -8px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.7);
+
+    transition: .5s;
+
+}
+
+
+.hero h1 span:hover {
+
+    color: var(--accent);
+
+    -webkit-text-stroke-color:
+        var(--accent);
+
+}
+
+
+.hero-description {
+
+    display: flex;
+
+    gap: 17px;
+
+    max-width: 580px;
+
+    margin-top: 38px;
+
+}
+
+
+.description-line {
+
+    width: 35px;
+    height: 1px;
+
+    flex-shrink: 0;
+
+    margin-top: 11px;
+
+    background: var(--accent);
+
+}
+
+
+.hero-description p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.hero-description strong {
+
+    color: var(--white);
+
+    font-weight: 500;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+
+.btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 21px;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    transition: .35s;
+
+}
+
+
+.btn-primary {
+
+    color: #000;
+
+    background: var(--accent);
+
+    font-weight: 700;
+
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(200,255,66,.12);
+
+}
+
+
+.btn-outline {
+
+    border: 1px solid var(--line-strong);
+
+}
+
+
+.btn-outline:hover {
+
+    background: var(--surface-hover);
+
+    transform: translateY(-3px);
+
+}
+
+
+.hero-stats {
+
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 55px;
+
+}
+
+
+.hero-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.hero-stat strong {
+
+    font-family: var(--display);
+
+    font-size: 25px;
+
+}
+
+
+.hero-stat span {
+
+    font-family: var(--mono);
+
+    color: #555a61;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+
+    height: 620px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.system-orbit {
+
+    position: absolute;
+
+    border: 1px solid
+        rgba(255,255,255,.07);
+
+    border-radius: 50%;
+
+    animation:
+        rotateOrbit
+        30s
+        linear
+        infinite;
+
+}
+
+
+.orbit-one {
+
+    width: 390px;
+    height: 390px;
+
+}
+
+
+.orbit-two {
+
+    width: 510px;
+    height: 510px;
+
+    border-style: dashed;
+
+    animation-duration: 40s;
+
+    animation-direction: reverse;
+
+}
+
+
+.orbit-three {
+
+    width: 630px;
+    height: 630px;
+
+    border-color:
+        rgba(200,255,66,.04);
+
+    animation-duration: 55s;
+
+}
+
+
+@keyframes rotateOrbit {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal-card {
+
+    width: 390px;
+    min-height: 410px;
+
+    position: relative;
+
+    z-index: 10;
+
+    border: 1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,23,28,.94),
+            rgba(5,6,8,.88)
+        );
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,.55),
+        inset 0 1px
+        rgba(255,255,255,.12);
+
+    overflow: hidden;
+
+    transform:
+        perspective(1000px)
+        rotateY(-12deg)
+        rotateX(5deg);
+
+    transition: transform .2s ease;
+
+}
+
+
+.terminal-header {
+
+    height: 48px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    padding: 0 16px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.terminal-controls {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+
+.terminal-controls span {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #4b4f55;
+
+}
+
+
+.terminal-title {
+
+    text-align: center;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: #6c7178;
+
+}
+
+
+.terminal-status {
+
+    text-align: right;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: var(--accent);
+
+}
+
+
+.terminal-body {
+
+    padding: 28px;
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+}
+
+
+.terminal-line {
+
+    color: #c7cbd0;
+
+    margin-bottom: 10px;
+
+}
+
+
+.terminal-green {
+
+    color: var(--accent);
+
+    margin-right: 8px;
+
+}
+
+
+.terminal-output {
+
+    color: #6f747b;
+
+    padding-left: 18px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.terminal-output.accent {
+
+    color: var(--accent);
+
+}
+
+
+.terminal-stack {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    padding-left: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.terminal-stack span {
+
+    padding: 5px 7px;
+
+    border: 1px solid var(--line);
+
+    color: #858a90;
+
+    font-size: 7px;
+
+    border-radius: 4px;
+
+}
+
+
+.terminal-cursor {
+
+    color: var(--accent);
+
+    animation: blink .8s infinite;
+
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+.terminal-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 13px 20px;
+
+    border-top: 1px solid var(--line);
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: #555a61;
+
+}
+
+
+.terminal-footer span:last-child {
+
+    color: var(--accent);
+
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+
+    position: absolute;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--line);
+
+    background:
+        rgba(7,8,10,.8);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+    animation:
+        floatCard
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.floating-card i {
+
+    color: var(--accent);
+
+    font-size: 15px;
+
+}
+
+
+.floating-card div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.floating-card small {
+
+    color: #555a61;
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+}
+
+
+.floating-card strong {
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.floating-system {
+
+    top: 17%;
+    left: 0;
+
+}
+
+
+.floating-code {
+
+    top: 42%;
+    right: -5px;
+
+    animation-delay: -1.3s;
+
+}
+
+
+.floating-freelance {
+
+    bottom: 16%;
+    left: 5%;
+
+    animation-delay: -2.4s;
+
+}
+
+
+@keyframes floatCard {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #4d5259;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.scroll-line {
+
+    width: 60px;
+    height: 1px;
+
+    background: #32363c;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    margin-bottom: 70px;
+
+}
+
+
+.section-label {
+
+    font-family: var(--mono);
+
+    color: var(--accent);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section-heading h2 {
+
+    max-width: 800px;
+
+    margin-top: 18px;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            90px
+        );
+
+    line-height: .94;
+
+    letter-spacing: -4px;
+
+}
+
+
+.section-heading h2 span {
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.6);
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap: 90px;
+
+}
+
+
+.about-large {
+
+    font-family: var(--display);
+
+    font-size: 31px;
+
+    line-height: 1.25;
+
+    margin-bottom: 28px;
+
+}
+
+
+.about-large span {
+
+    color: var(--accent);
+
+}
+
+
+.about-description {
+
+    max-width: 520px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+
+}
+
+
+.about-signature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 40px;
+
+}
+
+
+.about-signature > span {
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+
+    font-family: var(--display);
+
+    font-weight: 700;
+
+}
+
+
+.about-signature div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.about-signature strong {
+
+    font-size: 10px;
+
+}
+
+
+.about-signature small {
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+    color: #555a61;
+
+    letter-spacing: 1px;
+
+}
+
+
+.about-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+}
+
+
+.about-card {
+
+    min-height: 340px;
+
+    padding: 25px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 22px;
+
+    background: var(--surface);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .4s;
+
+}
+
+
+.about-card:hover {
+
+    transform: translateY(-8px);
+
+    background: var(--surface-hover);
+
+    border-color:
+        rgba(200,255,66,.3);
+
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    color: #4d5259;
+
+}
+
+
+.card-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    color: var(--accent);
+
+    margin-bottom: 55px;
+
+}
+
+
+.about-card h3 {
+
+    font-family: var(--display);
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+
+}
+
+
+.about-card h3 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.5);
+
+}
+
+
+.about-card p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-list {
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.service-row {
+
+    display: grid;
+
+    grid-template-columns:
+        70px 70px 1fr 40px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    transition: .35s;
+
+}
+
+
+.service-index {
+
+    font-family: var(--mono);
+
+    color: var(--accent);
+
+    font-size: 8px;
+
+}
+
+
+.service-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 13px;
+
+    color: #777c84;
+
+    transition: .3s;
+
+}
+
+
+.service-info h3 {
+
+    font-family: var(--display);
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    transition: .3s;
+
+}
+
+
+.service-info p {
+
+    max-width: 650px;
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+.service-arrow {
+
+    color: #4e535a;
+
+    transition: .3s;
+
+}
+
+
+.service-row:hover {
+
+    padding-left: 15px;
+
+}
+
+
+.service-row:hover .service-icon {
+
+    color: var(--accent);
+
+    border-color:
+        rgba(200,255,66,.35);
+
+}
+
+
+.service-row:hover h3 {
+
+    color: var(--accent);
+
+}
+
+
+.service-row:hover .service-arrow {
+
+    color: var(--accent);
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+.skills-intro {
+
+    max-width: 500px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 50px;
+
+}
+
+
+.skill {
+
+    margin-bottom: 28px;
+
+}
+
+
+.skill-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.skill-top strong {
+
+    color: var(--accent);
+
+}
+
+
+.skill-bar {
+
+    width: 100%;
+
+    height: 2px;
+
+    background: #20242a;
+
+}
+
+
+.skill-bar span {
+
+    display: block;
+
+    height: 100%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 14px
+        rgba(200,255,66,.35);
+
+    transform-origin: left;
+
+}
+
+
+/* =========================================================
+   TECH ORBIT
+========================================================= */
+
+.tech-orbit {
+
+    height: 500px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.orbit-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--line);
+
+}
+
+
+.circle-a {
+
+    width: 300px;
+    height: 300px;
+
+    animation:
+        rotateOrbit
+        25s
+        linear
+        infinite;
+
+}
+
+
+.circle-b {
+
+    width: 410px;
+    height: 410px;
+
+    border-style: dashed;
+
+    animation:
+        rotateOrbit
+        35s
+        linear
+        infinite reverse;
+
+}
+
+
+.circle-c {
+
+    width: 500px;
+    height: 500px;
+
+    border-color:
+        rgba(200,255,66,.05);
+
+}
+
+
+.orbit-core {
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 4px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    color: #000;
+
+    box-shadow:
+        0 0 80px
+        rgba(200,255,66,.1);
+
+}
+
+
+.orbit-core span {
+
+    font-family: var(--display);
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+
+.orbit-core small {
+
+    font-family: var(--mono);
+
+    text-align: center;
+
+    font-size: 5px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.tech-node {
+
+    position: absolute;
+
+    width: 67px;
+    height: 67px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+
+    background:
+        rgba(5,6,8,.9);
+
+    z-index: 5;
+
+}
+
+
+.tech-node i {
+
+    font-size: 19px;
+
+    color: var(--accent);
+
+}
+
+
+.tech-node span {
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+    color: #767b82;
+
+}
+
+
+.node-html {
+
+    top: 35px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.node-css {
+
+    right: 35px;
+    top: 50%;
+
+}
+
+
+.node-js {
+
+    bottom: 35px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.node-database {
+
+    left: 35px;
+    top: 50%;
+
+}
+
+
+.node-server {
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    opacity: 0;
+
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 20px;
+
+}
+
+
+.project {
+
+    overflow: hidden;
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    background: var(--surface);
+
+    transition: .45s;
+
+}
+
+
+.project:hover {
+
+    border-color:
+        rgba(200,255,66,.28);
+
+    transform:
+        translateY(-8px);
+
+}
+
+
+.project-large {
+
+    grid-column:
+        span 2;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+}
+
+
+.project-preview {
+
+    min-height: 370px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.project-index {
+
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    font-family: var(--mono);
+
+    font-size: 8px;
+
+    color: #555a61;
+
+}
+
+
+.warehouse-preview {
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,255,66,.1),
+            transparent 60%
+        );
+
+}
+
+
+.preview-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+}
+
+
+.dashboard-preview {
+
+    width: 75%;
+
+    min-height: 245px;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 18px;
+
+    border: 1px solid
+        rgba(255,255,255,.13);
+
+    border-radius: 16px;
+
+    background:
+        rgba(7,9,11,.9);
+
+    box-shadow:
+        0 35px 70px
+        rgba(0,0,0,.5);
+
+    transform:
+        perspective(900px)
+        rotateX(5deg)
+        rotateY(-8deg);
+
+}
+
+
+.dashboard-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: #6d7279;
+
+}
+
+
+.live {
+
+    color: var(--accent);
+
+}
+
+
+.dashboard-kpis {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+}
+
+
+.dashboard-kpis div {
+
+    padding: 10px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 8px;
+
+}
+
+
+.dashboard-kpis small {
+
+    display: block;
+
+    color: #53585f;
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+}
+
+
+.dashboard-kpis strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: var(--display);
+
+    font-size: 18px;
+
+}
+
+
+.dashboard-chart {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.dashboard-chart span {
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--accent),
+            rgba(200,255,66,.1)
+        );
+
+    border-radius:
+        3px 3px 0 0;
+
+}
+
+
+.project-content {
+
+    padding: 35px;
+
+}
+
+
+.project-tags {
+
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 23px;
+
+}
+
+
+.project-tags span {
+
+    padding: 5px 8px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 100px;
+
+    font-family: var(--mono);
+
+    color: #6e737a;
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.project-content h3 {
+
+    font-family: var(--display);
+
+    font-size: 31px;
+
+    line-height: .95;
+
+    margin-bottom: 18px;
+
+}
+
+
+.project-content h3 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.5);
+
+}
+
+
+.project-content p {
+
+    max-width: 460px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+.project-tech {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+
+}
+
+
+.project-tech span {
+
+    color: #53585f;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+}
+
+
+/* =========================================================
+   WEB PROJECT
+========================================================= */
+
+.web-preview {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(102,119,255,.12),
+            transparent 60%
+        );
+
+}
+
+
+.browser-window {
+
+    width: 72%;
+
+    height: 210px;
+
+    border: 1px solid
+        rgba(255,255,255,.13);
+
+    border-radius: 14px;
+
+    background: #080a0d;
+
+    overflow: hidden;
+
+    transform: rotate(-5deg);
+
+    transition: .5s;
+
+}
+
+
+.project:hover .browser-window {
+
+    transform:
+        rotate(0)
+        scale(1.03);
+
+}
+
+
+.browser-header {
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding-left: 12px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.browser-header span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #4e5359;
+
+}
+
+
+.browser-body {
+
+    padding: 20px;
+
+}
+
+
+.browser-title {
+
+    width: 65%;
+
+    height: 11px;
+
+    background: var(--accent);
+
+    opacity: .7;
+
+    border-radius: 20px;
+
+}
+
+
+.browser-line {
+
+    width: 85%;
+    height: 5px;
+
+    background: #252a30;
+
+    border-radius: 20px;
+
+    margin-top: 12px;
+
+}
+
+
+.browser-line.short {
+
+    width: 55%;
+
+}
+
+
+.browser-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+}
+
+
+.browser-cards div {
+
+    height: 65px;
+
+    border: 1px solid
+        rgba(200,255,66,.13);
+
+    border-radius: 7px;
+
+    background:
+        rgba(200,255,66,.025);
+
+}
+
+
+/* =========================================================
+   SYSTEM PROJECT
+========================================================= */
+
+.system-preview {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.05),
+            transparent 60%
+        );
+
+}
+
+
+.server-rack {
+
+    width: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    transform:
+        perspective(700px)
+        rotateY(-10deg);
+
+}
+
+
+.server-unit {
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+}
+
+
+.server-unit span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 8px
+        rgba(200,255,66,.5);
+
+}
+
+
+.server-unit span:nth-child(2) {
+
+    width: 80px;
+    height: 2px;
+
+    border-radius: 0;
+
+    background: #383d43;
+
+    box-shadow: none;
+
+}
+
+
+.server-unit span:nth-child(3) {
+
+    margin-left: auto;
+
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.process-item {
+
+    min-height: 300px;
+
+    padding: 28px;
+
+    border-right: 1px solid var(--line);
+
+    position: relative;
+
+}
+
+
+.process-item:last-child {
+
+    border-right: 0;
+
+}
+
+
+.process-item > span {
+
+    font-family: var(--mono);
+
+    color: var(--accent);
+
+    font-size: 8px;
+
+}
+
+
+.process-item > i {
+
+    display: block;
+
+    margin-top: 55px;
+
+    color: #666b72;
+
+    font-size: 25px;
+
+    transition: .3s;
+
+}
+
+
+.process-item h3 {
+
+    margin-top: 28px;
+
+    font-family: var(--display);
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+}
+
+
+.process-item p {
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+}
+
+
+.process-item:hover > i {
+
+    color: var(--accent);
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    padding-bottom: 150px;
+
+}
+
+
+.contact-box {
+
+    min-height: 560px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 35px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(200,255,66,.08),
+            transparent 35%
+        ),
+        var(--surface);
+
+}
+
+
+.contact-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: #555a61;
+
+    letter-spacing: 2px;
+
+}
+
+
+.contact-main {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    margin-top: 100px;
+
+}
+
+
+.contact-label {
+
+    font-family: var(--mono);
+
+    color: var(--accent);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.contact-copy h2 {
+
+    margin-top: 18px;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            90px
+        );
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+}
+
+
+.contact-copy h2 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.55);
+
+}
+
+
+.contact-copy p {
+
+    max-width: 510px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-top: 28px;
+
+}
+
+
+.contact-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding: 16px 20px;
+
+    border-radius: 100px;
+
+    color: #000;
+
+    background: var(--accent);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.contact-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(200,255,66,.13);
+
+}
+
+
+/* =========================================================
+   CONTACT TERMINAL
+========================================================= */
+
+.contact-terminal {
+
+    border: 1px solid var(--line);
+
+    border-radius: 18px;
+
+    background:
+        rgba(5,6,8,.8);
+
+    overflow: hidden;
+
+}
+
+
+.contact-terminal-head {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid var(--line);
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+    color: #656a71;
+
+}
+
+
+.contact-terminal-head i {
+
+    color: var(--accent);
+
+}
+
+
+.contact-terminal-body {
+
+    padding: 25px;
+
+}
+
+
+.contact-terminal-body div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid
+        rgba(255,255,255,.05);
+
+}
+
+
+.contact-terminal-body div:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.contact-terminal-body small {
+
+    color: #4e535a;
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+}
+
+
+.contact-terminal-body strong {
+
+    color: #c9cdd2;
+
+    font-family: var(--mono);
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+}
+
+
+.contact-terminal-body .green {
+
+    color: var(--accent);
+
+}
+
+
+.contact-background {
+
+    position: absolute;
+
+    right: -100px;
+
+    bottom: -190px;
+
+    font-family: var(--display);
+
+    font-size: 470px;
+
+    line-height: .8;
+
+    font-weight: 800;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,.035);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    width:
+        min(
+            calc(100% - 60px),
+            var(--container)
+        );
+
+    margin: auto;
+
+    padding: 35px 0;
+
+    border-top: 1px solid var(--line);
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1.5fr .5fr .7fr;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-logo {
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+
+    font-family: var(--display);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.footer-brand div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.footer-brand strong {
+
+    font-size: 9px;
+
+}
+
+
+.footer-brand span {
+
+    color: #4e535a;
+
+    font-family: var(--mono);
+
+    font-size: 6px;
+
+}
+
+
+footer > p {
+
+    color: #555a61;
+
+    font-size: 9px;
+
+}
+
+
+.socials {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.socials a {
+
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 50%;
+
+    color: #777c83;
+
+    font-size: 11px;
+
+    transition: .3s;
+
+}
+
+
+.socials a:hover {
+
+    color: #000;
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+}
+
+
+.copyright {
+
+    text-align: right;
+
+    color: #444950;
+
+    font-family: var(--mono);
+
+    font-size: 7px;
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    background:
+        rgba(7,8,10,.85);
+
+    backdrop-filter: blur(15px);
+
+    cursor: pointer;
+
+    z-index: 300;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    transition: .3s;
+
+}
+
+
+.back-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s
+        cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.reveal.revealed {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px) {
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+    }
+
+
+    .hero-content {
+
+        text-align: center;
+
+    }
+
+
+    .status-badge {
+
+        margin-inline: auto;
+
+    }
+
+
+    .hero-description {
+
+        margin-inline: auto;
+
+        text-align: left;
+
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-stats {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-visual {
+
+        height: 540px;
+
+    }
+
+
+    .about-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .skills-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .project-large {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .contact-main {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    footer {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .copyright {
+
+        text-align: left;
+
+    }
+
+}
+
+
+@media(max-width:800px) {
+
+
+    .navbar {
+
+        width:
+            calc(100% - 30px);
+
+        height: 75px;
+
+    }
+
+
+    nav {
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        top: 75px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 22px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 20px;
+
+        background:
+            rgba(5,6,8,.96);
+
+        backdrop-filter: blur(25px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform:
+            translateY(-10px);
+
+        transition: .3s;
+
+    }
+
+
+    nav.open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .nav-cta {
+
+        display: none;
+
+    }
+
+
+    .menu-btn {
+
+        display: grid;
+
+        place-items: center;
+
+    }
+
+
+    .section {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .hero {
+
+        min-height: auto;
+
+        padding-top: 70px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                65px,
+                18vw,
+                110px
+            );
+
+        letter-spacing: -5px;
+
+    }
+
+
+    .hero-visual {
+
+        height: 460px;
+
+        margin-top: 30px;
+
+    }
+
+
+    .terminal-card {
+
+        width: 310px;
+
+        min-height: 360px;
+
+    }
+
+
+    .orbit-one {
+
+        width: 310px;
+        height: 310px;
+
+    }
+
+
+    .orbit-two {
+
+        width: 400px;
+        height: 400px;
+
+    }
+
+
+    .orbit-three {
+
+        width: 490px;
+        height: 490px;
+
+    }
+
+
+    .floating-card {
+
+        transform: scale(.8);
+
+    }
+
+
+    .floating-system {
+
+        left: -5px;
+
+    }
+
+
+    .floating-code {
+
+        right: -10px;
+
+    }
+
+
+    .floating-freelance {
+
+        left: 0;
+
+    }
+
+
+    .about,
+    .services,
+    .skills,
+    .projects,
+    .process,
+    .contact {
+
+        padding-top: 120px;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .about-cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-card {
+
+        min-height: auto;
+
+    }
+
+
+    .service-row {
+
+        grid-template-columns:
+            40px 50px 1fr 25px;
+
+        gap: 12px;
+
+    }
+
+
+    .service-info h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .service-info p {
+
+        font-size: 9px;
+
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .project-large {
+
+        grid-column: span 1;
+
+    }
+
+
+    .project-preview {
+
+        min-height: 290px;
+
+    }
+
+
+    .dashboard-preview {
+
+        width: 82%;
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .process-item:nth-child(2) {
+
+        border-right: 0;
+
+    }
+
+
+    .process-item:nth-child(3),
+    .process-item:nth-child(4) {
+
+        border-top: 1px solid var(--line);
+
+    }
+
+
+    .contact-box {
+
+        padding: 25px;
+
+    }
+
+
+    .contact-main {
+
+        margin-top: 70px;
+
+    }
+
+
+    .contact-copy h2 {
+
+        font-size: 52px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .contact-background {
+
+        font-size: 260px;
+
+        right: -50px;
+
+        bottom: -100px;
+
+    }
+
+
+    footer {
+
+        width:
+            calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .footer-brand {
+
+        justify-content: center;
+
+    }
+
+
+    footer > p {
+
+        line-height: 1.7;
+
+    }
+
+
+    .socials {
+
+        justify-content: center;
+
+    }
+
+
+    .copyright {
+
+        text-align: center;
+
+    }
+
+
+    .cursor,
+    .cursor-follower {
+
+        display: none;
+
+    }
+
+}
+
+
+@media(max-width:480px) {
+
+
+    .logo-text {
+
+        display: none;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .btn {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-stats {
+
+        gap: 20px;
+
+    }
+
+
+    .hero-stat strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .hero-stat span {
+
+        font-size: 6px;
+
+    }
+
+
+    .hero-visual {
+
+        transform:
+            scale(.9);
+
+        margin-left: -5%;
+
+        width: 110%;
+
+    }
+
+
+    .terminal-card {
+
+        width: 285px;
+
+    }
+
+
+    .service-row {
+
+        grid-template-columns:
+            35px 45px 1fr;
+
+    }
+
+
+    .service-arrow {
+
+        display: none;
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .process-item {
+
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+
+    }
+
+
+    .process-item:nth-child(2) {
+
+        border-top: 0;
+
+    }
+
+
+    .contact-top {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+}
+</style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CUSTOM CURSOR
+========================================================= -->
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+
+    <div class="grid"></div>
+
+    <div class="noise"></div>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-mark">
+            YN
+        </div>
+
+        <div class="logo-text">
+
+            <strong>YOUSSEF</strong>
+
+            <span>NACHAR / DIGITAL SYSTEMS</span>
+
+        </div>
+
+    </a>
+
+
+    <nav id="navMenu">
+
+        <a href="#home" class="nav-link active">
+            <small>01</small>
+            Home
+        </a>
+
+        <a href="#about" class="nav-link">
+            <small>02</small>
+            About
+        </a>
+
+        <a href="#services" class="nav-link">
+            <small>03</small>
+            Services
+        </a>
+
+        <a href="#skills" class="nav-link">
+            <small>04</small>
+            Skills
+        </a>
+
+        <a href="#projects" class="nav-link">
+            <small>05</small>
+            Projects
+        </a>
+
+        <a href="#contact" class="nav-link">
+            <small>06</small>
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a href="#contact" class="nav-cta">
+
+        <span>Let's Work</span>
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    </a>
+
+
+    <button class="menu-btn" id="menuBtn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero section" id="home">
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+
+        <div class="status-badge">
+
+            <span class="status-dot"></span>
+
+            AVAILABLE FOR FREELANCE WORK
+
+        </div>
+
+
+        <div class="hero-code">
+
+            SYSTEM.OPERATOR
+            <span>//</span>
+            FULLSTACK.DEVELOPER
+
+        </div>
+
+
+        <h1>
+
+            Youssef
+
+            <span>Nachar</span>
+
+        </h1>
+
+
+        <div class="hero-description">
+
+            <div class="description-line"></div>
+
+            <p>
+
+                I operate digital systems, build scalable
+                full-stack applications and transform complex
+                ideas into <strong>clean, powerful digital solutions.</strong>
+
+            </p>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+
+                Explore My Work
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a href="#contact" class="btn btn-outline">
+
+                Hire Me
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+
+            <div class="hero-stat">
+
+                <strong>03</strong>
+
+                <span>
+                    CORE ROLES
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>24/7</strong>
+
+                <span>
+                    SYSTEM MINDSET
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>∞</strong>
+
+                <span>
+                    BUILD / IMPROVE
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO 3D VISUAL
+    ====================================================== -->
+
+    <div class="hero-visual">
+
+
+        <div class="system-orbit orbit-one"></div>
+
+        <div class="system-orbit orbit-two"></div>
+
+        <div class="system-orbit orbit-three"></div>
+
+
+        <!-- MAIN TERMINAL -->
+
+        <div class="terminal-card" id="terminalCard">
+
+
+            <div class="terminal-header">
+
+                <div class="terminal-controls">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="terminal-title">
+
+                    YN_SYSTEM_CORE
+
+                </div>
+
+                <div class="terminal-status">
+
+                    ONLINE
+
+                </div>
+
+            </div>
+
+
+            <div class="terminal-body">
+
+
+                <div class="terminal-line">
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    whoami
+
+                </div>
+
+
+                <div class="terminal-output">
+
+                    youssef@digital-system
+
+                </div>
+
+
+                <div class="terminal-line">
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    role --current
+
+                </div>
+
+
+                <div class="terminal-output accent">
+
+                    SYSTEM OPERATOR
+
+                </div>
+
+
+                <div class="terminal-line">
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    stack --list
+
+                </div>
+
+
+                <div class="terminal-stack">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>Firebase</span>
+                    <span>Backend</span>
+
+                </div>
+
+
+                <div class="terminal-line">
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    status
+
+                    <span class="terminal-cursor">
+                        _
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="terminal-footer">
+
+                <span>
+                    SYSTEM READY
+                </span>
+
+                <span>
+                    100%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLOATING CARDS -->
+
+        <div class="floating-card floating-system">
+
+            <i class="fa-solid fa-server"></i>
+
+            <div>
+
+                <small>SYSTEM</small>
+
+                <strong>OPERATOR</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-code">
+
+            <i class="fa-solid fa-code"></i>
+
+            <div>
+
+                <small>FULL</small>
+
+                <strong>STACK</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-freelance">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <div>
+
+                <small>AVAILABLE</small>
+
+                <strong>FREELANCER</strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="scroll-indicator">
+
+        <span>SCROLL TO EXPLORE</span>
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about section" id="about">
+
+
+    <div class="section-heading">
+
+        <div class="section-label">
+
+            02 / ABOUT ME
+
+        </div>
+
+        <h2>
+
+            I don't just use
+
+            <span>systems.</span>
+
+            I understand them.
+
+        </h2>
+
+    </div>
+
+
+    <div class="about-layout">
+
+
+        <div class="about-main">
+
+            <p class="about-large">
+
+                Technology is most powerful when
+                <span>systems, code and people</span>
+                work together.
+
+            </p>
+
+
+            <p class="about-description">
+
+                I'm Youssef Nachar, a System Operator,
+                Full-Stack Developer and Freelancer focused
+                on building reliable digital systems and
+                practical software solutions.
+
+            </p>
+
+
+            <p class="about-description">
+
+                From warehouse operations and dashboards
+                to responsive web applications and
+                database-driven systems, I enjoy solving
+                real-world problems through technology.
+
+            </p>
+
+
+            <div class="about-signature">
+
+                <span>YN</span>
+
+                <div>
+
+                    <strong>YOUSSEF NACHAR</strong>
+
+                    <small>
+                        SYSTEMS • SOFTWARE • DIGITAL
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-cards">
+
+
+            <article class="about-card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-server"></i>
+
+                </div>
+
+                <h3>
+                    System
+                    <span>Operator</span>
+                </h3>
+
+                <p>
+
+                    Monitoring operations, handling
+                    digital systems and keeping workflows
+                    reliable, organized and efficient.
+
+                </p>
+
+            </article>
+
+
+            <article class="about-card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+                <h3>
+                    Full-Stack
+                    <span>Developer</span>
+                </h3>
+
+                <p>
+
+                    Building complete web applications
+                    from responsive interfaces to
+                    backend logic and data management.
+
+                </p>
+
+            </article>
+
+
+            <article class="about-card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                </div>
+
+                <h3>
+                    Freelance
+                    <span>Solutions</span>
+                </h3>
+
+                <p>
+
+                    Turning client ideas into modern,
+                    functional and professional digital
+                    products.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services section" id="services">
+
+
+    <div class="section-heading services-heading">
+
+        <div class="section-label">
+
+            03 / SERVICES
+
+        </div>
+
+        <h2>
+
+            Built for
+
+            <span>real problems.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="services-list">
+
+
+        <div class="service-row">
+
+            <div class="service-index">
+                01
+            </div>
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-server"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    System Operations
+                </h3>
+
+                <p>
+
+                    System monitoring, operational
+                    workflows, troubleshooting and
+                    digital process optimization.
+
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square service-arrow"></i>
+
+        </div>
+
+
+        <div class="service-row">
+
+            <div class="service-index">
+                02
+            </div>
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    Full-Stack Development
+                </h3>
+
+                <p>
+
+                    Modern responsive websites,
+                    dashboards, web applications,
+                    databases and backend systems.
+
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square service-arrow"></i>
+
+        </div>
+
+
+        <div class="service-row">
+
+            <div class="service-index">
+                03
+            </div>
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    Dashboards & Automation
+                </h3>
+
+                <p>
+
+                    Operational dashboards, reporting
+                    systems, data visualization and
+                    workflow automation.
+
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square service-arrow"></i>
+
+        </div>
+
+
+        <div class="service-row">
+
+            <div class="service-index">
+                04
+            </div>
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    Freelance Development
+                </h3>
+
+                <p>
+
+                    Custom websites and digital products
+                    designed around specific business
+                    requirements.
+
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square service-arrow"></i>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section class="skills section" id="skills">
+
+
+    <div class="section-heading">
+
+        <div class="section-label">
+
+            04 / TECH STACK
+
+        </div>
+
+        <h2>
+
+            Tools I use to
+
+            <span>build.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="skills-layout">
+
+
+        <div class="skills-content">
+
+
+            <p class="skills-intro">
+
+                A practical technology stack focused on
+                creating reliable systems, beautiful
+                interfaces and useful applications.
+
+            </p>
+
+
+            <!-- HTML -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        HTML / SEMANTIC UI
+                    </span>
+
+                    <strong>
+                        95%
+                    </strong>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width:95%"></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CSS -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        CSS / UI ENGINEERING
+                    </span>
+
+                    <strong>
+                        95%
+                    </strong>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width:95%"></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- JS -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        JAVASCRIPT
+                    </span>
+
+                    <strong>
+                        90%
+                    </strong>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width:90%"></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Firebase -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        FIREBASE / DATABASE
+                    </span>
+
+                    <strong>
+                        88%
+                    </strong>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width:88%"></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>
+                        SYSTEM OPERATIONS
+                    </span>
+
+                    <strong>
+                        95%
+                    </strong>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width:95%"></span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             TECH ORBIT
+        ================================================== -->
+
+        <div class="tech-orbit">
+
+
+            <div class="orbit-circle circle-a"></div>
+
+            <div class="orbit-circle circle-b"></div>
+
+            <div class="orbit-circle circle-c"></div>
+
+
+            <div class="orbit-core">
+
+                <span>YN</span>
+
+                <small>
+                    DIGITAL
+                    <br>
+                    ENGINEERING
+                </small>
+
+            </div>
+
+
+            <div class="tech-node node-html">
+
+                <i class="fa-brands fa-html5"></i>
+
+                <span>HTML</span>
+
+            </div>
+
+
+            <div class="tech-node node-css">
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+                <span>CSS</span>
+
+            </div>
+
+
+            <div class="tech-node node-js">
+
+                <i class="fa-brands fa-js"></i>
+
+                <span>JS</span>
+
+            </div>
+
+
+            <div class="tech-node node-database">
+
+                <i class="fa-solid fa-database"></i>
+
+                <span>DATA</span>
+
+            </div>
+
+
+            <div class="tech-node node-server">
+
+                <i class="fa-solid fa-server"></i>
+
+                <span>SERVER</span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section class="projects section" id="projects">
+
+
+    <div class="section-heading">
+
+        <div class="section-label">
+
+            05 / SELECTED WORK
+
+        </div>
+
+        <h2>
+
+            Systems that
+
+            <span>solve.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- =================================================
+             PROJECT 01
+        ================================================== -->
+
+        <article class="project project-large">
+
+
+            <div class="project-preview warehouse-preview">
+
+
+                <div class="preview-grid"></div>
+
+
+                <div class="dashboard-preview">
+
+
+                    <div class="dashboard-top">
+
+                        <span>
+                            OPERATIONS
+                        </span>
+
+                        <span class="live">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="dashboard-kpis">
+
+                        <div>
+                            <small>ORDERS</small>
+                            <strong>1,284</strong>
+                        </div>
+
+                        <div>
+                            <small>READY</small>
+                            <strong>348</strong>
+                        </div>
+
+                        <div>
+                            <small>DONE</small>
+                            <strong>936</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-chart">
+
+                        <span style="height:40%"></span>
+                        <span style="height:65%"></span>
+                        <span style="height:48%"></span>
+                        <span style="height:80%"></span>
+                        <span style="height:60%"></span>
+                        <span style="height:90%"></span>
+                        <span style="height:72%"></span>
+                        <span style="height:100%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-index">
+                    01
+                </div>
+
+
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-tags">
+
+                    <span>OPERATIONS</span>
+
+                    <span>DASHBOARD</span>
+
+                    <span>FIREBASE</span>
+
+                </div>
+
+
+                <h3>
+
+                    Operations
+
+                    <span>Management System</span>
+
+                </h3>
+
+
+                <p>
+
+                    A complete operational dashboard for
+                    managing orders, warehouses, distribution,
+                    reporting, returns and real-time workflows.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Firebase</span>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PROJECT 02
+        ================================================== -->
+
+        <article class="project">
+
+
+            <div class="project-preview web-preview">
+
+
+                <div class="browser-window">
+
+
+                    <div class="browser-header">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="browser-body">
+
+                        <div class="browser-title"></div>
+
+                        <div class="browser-line"></div>
+
+                        <div class="browser-line short"></div>
+
+
+                        <div class="browser-cards">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-index">
+                    02
+                </div>
+
+
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-tags">
+
+                    <span>FRONTEND</span>
+                    <span>UI / UX</span>
+
+                </div>
+
+
+                <h3>
+
+                    Modern
+
+                    <span>Web Experiences</span>
+
+                </h3>
+
+
+                <p>
+
+                    Responsive, interactive and premium
+                    websites designed for modern brands,
+                    businesses and personal portfolios.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PROJECT 03
+        ================================================== -->
+
+        <article class="project">
+
+
+            <div class="project-preview system-preview">
+
+
+                <div class="server-rack">
+
+
+                    <div class="server-unit">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="server-unit">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="server-unit">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="server-unit">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-index">
+                    03
+                </div>
+
+
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-tags">
+
+                    <span>SYSTEM</span>
+                    <span>AUTOMATION</span>
+
+                </div>
+
+
+                <h3>
+
+                    Digital
+
+                    <span>System Solutions</span>
+
+                </h3>
+
+
+                <p>
+
+                    Practical digital tools that simplify
+                    operations, automate repetitive tasks
+                    and improve workflow visibility.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>Systems</span>
+                    <span>Automation</span>
+                    <span>Data</span>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE / PROCESS
+========================================================= -->
+
+<section class="process section">
+
+
+    <div class="section-heading">
+
+        <div class="section-label">
+
+            06 / MY PROCESS
+
+        </div>
+
+        <h2>
+
+            From problem
+
+            <span>to solution.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+        <div class="process-item">
+
+            <span>01</span>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>
+                Analyze
+            </h3>
+
+            <p>
+                Understand the real problem,
+                requirements and operational needs.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>02</span>
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <h3>
+                Architect
+            </h3>
+
+            <p>
+                Design the structure, workflow,
+                interface and technical solution.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>03</span>
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>
+                Build
+            </h3>
+
+            <p>
+                Develop the solution with clean,
+                scalable and maintainable code.
+            </p>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>04</span>
+
+            <i class="fa-solid fa-rocket"></i>
+
+            <h3>
+                Launch
+            </h3>
+
+            <p>
+                Test, optimize, deploy and continuously
+                improve the final product.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact section" id="contact">
+
+
+    <div class="contact-box">
+
+
+        <div class="contact-top">
+
+            <span>
+                07 / CONTACT
+            </span>
+
+            <span>
+                SYSTEM STATUS: READY
+            </span>
+
+        </div>
+
+
+        <div class="contact-main">
+
+
+            <div class="contact-copy">
+
+                <div class="contact-label">
+
+                    HAVE A PROJECT?
+
+                </div>
+
+
+                <h2>
+
+                    Let's build
+
+                    <span>something useful.</span>
+
+                </h2>
+
+
+                <p>
+
+                    Need a website, dashboard, automation
+                    system or custom software solution?
+
+                    <br>
+
+                    Let's turn the idea into something real.
+
+                </p>
+
+
+                <a href="mailto:hello@youssefnachar.com"
+                   class="contact-btn">
+
+                    Start a Conversation
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-terminal">
+
+
+                <div class="contact-terminal-head">
+
+                    <span>CONTACT.EXE</span>
+
+                    <i class="fa-solid fa-terminal"></i>
+
+                </div>
+
+
+                <div class="contact-terminal-body">
+
+
+                    <div>
+                        <small>NAME</small>
+                        <strong>Youssef Nachar</strong>
+                    </div>
+
+
+                    <div>
+                        <small>ROLE</small>
+                        <strong>System Operator</strong>
+                    </div>
+
+
+                    <div>
+                        <small>STACK</small>
+                        <strong>Full-Stack Development</strong>
+                    </div>
+
+
+                    <div>
+                        <small>MODE</small>
+                        <strong class="green">
+                            FREELANCE / AVAILABLE
+                        </strong>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="contact-background">
+
+            YN
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+    <div class="footer-brand">
+
+        <div class="footer-logo">
+            YN
+        </div>
+
+        <div>
+
+            <strong>
+                YOUSSEF NACHAR
+            </strong>
+
+            <span>
+                SYSTEM OPERATOR / FULL-STACK DEVELOPER
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <p>
+
+        Building systems.
+        Writing code.
+        Solving problems.
+
+    </p>
+
+
+    <div class="socials">
+
+
+        <a href="#" aria-label="LinkedIn">
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+        </a>
+
+
+        <a href="#" aria-label="GitHub">
+
+            <i class="fa-brands fa-github"></i>
+
+        </a>
+
+
+        <a href="#" aria-label="Instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+    </div>
+
+
+    <span class="copyright">
+
+        © 2026 Youssef Nachar
+
+    </span>
+
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button class="back-top" id="backTop">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =========================================================
+   YOUSSEF NACHAR PORTFOLIO
+   SYSTEM OPERATOR / FULL-STACK DEVELOPER / FREELANCER
+========================================================= */
+
+"use strict";
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+
+
+if (menuBtn && navMenu) {
+
+    menuBtn.addEventListener("click", () => {
+
+        navMenu.classList.toggle("open");
+
+        const icon =
+            menuBtn.querySelector("i");
+
+        if (
+            navMenu.classList.contains("open")
+        ) {
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navMenu.classList.remove("open");
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+                icon.classList.remove("fa-xmark");
+
+                icon.classList.add("fa-bars");
+
+            });
+
+        });
+
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+const cursor =
+    document.querySelector(".cursor");
+
+const follower =
+    document.querySelector(".cursor-follower");
+
+
+let mouseX = 0;
+let mouseY = 0;
+
+let followerX = 0;
+let followerY = 0;
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        mouseX = event.clientX;
+
+        mouseY = event.clientY;
+
+
+        if (cursor) {
+
+            cursor.style.left =
+                `${mouseX}px`;
+
+            cursor.style.top =
+                `${mouseY}px`;
+
+        }
+
+    }
+);
+
+
+function animateCursor() {
+
+    followerX +=
+        (mouseX - followerX) * .12;
+
+    followerY +=
+        (mouseY - followerY) * .12;
+
+
+    if (follower) {
+
+        follower.style.left =
+            `${followerX}px`;
+
+        follower.style.top =
+            `${followerY}px`;
+
+    }
+
+
+    requestAnimationFrame(
+        animateCursor
+    );
+
+}
+
+
+animateCursor();
+
+
+/* =========================================================
+   CURSOR INTERACTION
+========================================================= */
+
+const interactive =
+    document.querySelectorAll(
+        "a, button, .project, .about-card, .service-row, .process-item"
+    );
+
+
+interactive.forEach(element => {
+
+
+    element.addEventListener(
+        "mouseenter",
+        () => {
+
+            if (!follower) return;
+
+            follower.style.width =
+                "60px";
+
+            follower.style.height =
+                "60px";
+
+            follower.style.borderColor =
+                "rgba(200,255,66,.8)";
+
+        }
+    );
+
+
+    element.addEventListener(
+        "mouseleave",
+        () => {
+
+            if (!follower) return;
+
+            follower.style.width =
+                "36px";
+
+            follower.style.height =
+                "36px";
+
+            follower.style.borderColor =
+                "rgba(200,255,66,.5)";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav-link"
+    );
+
+
+function updateActiveNav() {
+
+    const position =
+        window.scrollY +
+        window.innerHeight * .35;
+
+
+    sections.forEach(section => {
+
+        const top =
+            section.offsetTop;
+
+        const height =
+            section.offsetHeight;
+
+        const id =
+            section.getAttribute("id");
+
+
+        if (
+            position >= top &&
+            position < top + height
+        ) {
+
+            navLinks.forEach(link => {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute("href")
+                    === `#${id}`
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+        }
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateActiveNav,
+    { passive: true }
+);
+
+
+updateActiveNav();
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backTop =
+    document.getElementById(
+        "backTop"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (
+            window.scrollY > 700
+        ) {
+
+            backTop.classList.add(
+                "show"
+            );
+
+        } else {
+
+            backTop.classList.remove(
+                "show"
+            );
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+if (backTop) {
+
+    backTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   TERMINAL 3D EFFECT
+========================================================= */
+
+const heroVisual =
+    document.querySelector(
+        ".hero-visual"
+    );
+
+
+const terminalCard =
+    document.getElementById(
+        "terminalCard"
+    );
+
+
+if (
+    heroVisual &&
+    terminalCard
+) {
+
+    heroVisual.addEventListener(
+        "mousemove",
+        event => {
+
+            const rect =
+                heroVisual.getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const centerX =
+                rect.width / 2;
+
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateY =
+                (x - centerX) / 45;
+
+
+            const rotateX =
+                (centerY - y) / 45;
+
+
+            terminalCard.style.transform =
+                `perspective(1000px)
+                 rotateY(${rotateY}deg)
+                 rotateX(${rotateX}deg)`;
+
+        }
+    );
+
+
+    heroVisual.addEventListener(
+        "mouseleave",
+        () => {
+
+            terminalCard.style.transform =
+                `perspective(1000px)
+                 rotateY(-12deg)
+                 rotateX(5deg)`;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".section-heading, .about-card, .service-row, .skill, .project, .process-item, .contact-box"
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        element.classList.add(
+            "reveal"
+        );
+
+    }
+);
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) return;
+
+
+                    entry.target.classList.add(
+                        "revealed"
+                    );
+
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+            );
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =========================================================
+   MAGNETIC BUTTON
+========================================================= */
+
+const magneticButtons =
+    document.querySelectorAll(
+        ".btn-primary, .contact-btn"
+    );
+
+
+magneticButtons.forEach(
+    button => {
+
+
+        button.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    button.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left -
+                    rect.width / 2;
+
+
+                const y =
+                    event.clientY -
+                    rect.top -
+                    rect.height / 2;
+
+
+                button.style.transform =
+                    `translate(
+                        ${x * .12}px,
+                        ${y * .12}px
+                    )`;
+
+            }
+        );
+
+
+        button.addEventListener(
+            "mouseleave",
+            () => {
+
+                button.style.transform = "";
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PARALLAX ORBS
+========================================================= */
+
+const orbs =
+    document.querySelectorAll(
+        ".orb"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const scroll =
+            window.scrollY;
+
+
+        orbs.forEach(
+            (orb, index) => {
+
+                const speed =
+                    (index + 1) * .025;
+
+
+                orb.style.marginTop =
+                    `${scroll * speed}px`;
+
+            }
+        );
+
+    },
+    { passive: true }
+);
+
+
+/* =========================================================
+   PROJECT 3D EFFECT
+========================================================= */
+
+const projects =
+    document.querySelectorAll(
+        ".project"
+    );
+
+
+projects.forEach(
+    project => {
+
+
+        project.addEventListener(
+            "mousemove",
+            event => {
+
+                if (
+                    window.innerWidth < 800
+                ) return;
+
+
+                const rect =
+                    project.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const rotateY =
+                    (x - rect.width / 2) /
+                    100;
+
+
+                const rotateX =
+                    (rect.height / 2 - y) /
+                    130;
+
+
+                project.style.transform =
+                    `perspective(1000px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
+
+            }
+        );
+
+
+        project.addEventListener(
+            "mouseleave",
+            () => {
+
+                project.style.transform =
+                    "";
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SMOOTH ANCHORS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(anchor => {
+
+
+        anchor.addEventListener(
+            "click",
+            function(event) {
+
+                const targetID =
+                    this.getAttribute(
+                        "href"
+                    );
+
+
+                if (
+                    !targetID ||
+                    targetID === "#"
+                ) return;
+
+
+                const target =
+                    document.querySelector(
+                        targetID
+                    );
+
+
+                if (!target) return;
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   TERMINAL TYPING EFFECT
+========================================================= */
+
+const terminalCursor =
+    document.querySelector(
+        ".terminal-cursor"
+    );
+
+
+if (terminalCursor) {
+
+    setInterval(
+        () => {
+
+            terminalCursor.style.opacity =
+                terminalCursor.style.opacity === "0"
+                    ? "1"
+                    : "0";
+
+        },
+        500
+    );
+
+}
+
+
+/* =========================================================
+   SKILL BAR ANIMATION
+========================================================= */
+
+const skillBars =
+    document.querySelectorAll(
+        ".skill-bar span"
+    );
+
+
+skillBars.forEach(
+    bar => {
+
+        const width =
+            bar.style.width;
+
+        bar.style.width = "0";
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                setTimeout(
+                                    () => {
+
+                                        bar.style.transition =
+                                            "width 1.5s cubic-bezier(.2,.7,.2,1)";
+
+                                        bar.style.width =
+                                            width;
+
+                                    },
+                                    200
+                                );
+
+
+                                observer.unobserve(
+                                    bar
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: .5
+                }
+            );
+
+
+        observer.observe(bar);
+
+    }
+);
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+const currentYear =
+    new Date().getFullYear();
+
+
+const copyright =
+    document.querySelector(
+        ".copyright"
+    );
+
+
+if (copyright) {
+
+    copyright.textContent =
+        `© ${currentYear} Youssef Nachar`;
+
+}
+
+
+/* =========================================================
+   CONSOLE BRANDING
+========================================================= */
+
+console.log(
+    "%c YOUSSEF NACHAR ",
+    `
+        background:#c8ff42;
+        color:#000;
+        font-size:16px;
+        font-weight:700;
+        padding:8px 14px;
+    `
+);
+
+
+console.log(
+    "%c SYSTEM OPERATOR // FULL-STACK DEVELOPER // FREELANCER ",
+    `
+        color:#c8ff42;
+        font-size:11px;
+    `
+);
+</script>
+
+</body>
+</html>
